@@ -1,6 +1,6 @@
 <p align="center">
   <img src="http://a.sinister.ly/jtytjo.jpg">
-  Clock in/out system for any business written in Python3. *With some small edits of course.*
+  Clock in/out system for any business written in Python3.
 </p>
 
 # Small edits
