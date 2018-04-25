@@ -29,4 +29,4 @@ Some small edits that would need to be made are some of the following.
 * Other small things
 
 # Thanks
-Somwthing will be here for sure
+Something will be here for sure
