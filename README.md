@@ -6,7 +6,7 @@
 # Small edits
 Some small edits that would need to be made are some of the following.
 * Business name
-* Emplyee's
+* Employee's
 * Tech(Admin) username and password
 * Manager(s) username and password
 
