@@ -1,8 +1,8 @@
 ####################################################################################
-#  ©2017 Chadley Lyell                                                             #
+#  ©2020 Chadley Lyell                                                             #
 #  You may not redistribute as yours unless you have written consent from Chadley  #
 #  Twitter: @chad_lyell                                                            #
-#  Email: contact@chadleylyell.me                                                  #
+#  Email: chad.lyell@protonmail.com                                                 #
 ####################################################################################
 
 import os,time,readline,hashlib,os.path
