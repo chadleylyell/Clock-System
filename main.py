@@ -5,9 +5,9 @@
 #  Email: chad.lyell@protonmail.com                                                #
 ####################################################################################
 
-import os,time,readline,hashlib,os.path
+import os,time,readline,hashlib,os.path,platform
 
-from functions import headerGenerator
+from functions import *
 
 color = {
     'RED'              : '\033[1;91m',
@@ -29,11 +29,11 @@ credits = '©2020 Chadley Lyell\n' + color['TWITTER_BLUE'] + 'Twitter: @chad_lye
 startPhrase = 'Type "help" to begin!\n'
 os.system('clear') # This will clear the screen for a nice and clean interface!
 
-os.system('chflags hidden db') # Make sure this file is in same directory that you are running this script from.
+# os.system('chflags hidden db') # Make sure this file is in same directory that you are running this script from.
 passwordFile = open('db','r+') # Make sure this file is in same directory that you are running this script from.
 secretPassword = passwordFile.read()
 
-os.system('chflags hidden header')
+# os.system('chflags hidden header')
 companyHeader = open('header','r+')
 header = companyHeader.read()
 
@@ -41,7 +41,7 @@ header = companyHeader.read()
 
 def Main():
 	global exit
-	print('Hello World!')
+	print(header)
 	headerGenerator()
 	exit = True
 

@@ -1,18 +1,41 @@
-import readline,os,os.path,pyfiglet,stdiomask,datetime,readline
+import readline,os,os.path,pyfiglet,stdiomask,datetime,platform
+
+companyHeader = open('header','r+')
+header = companyHeader.read()
+
+passwordFile = open('db','r+')
+secretPassword = passwordFile.read()
+
+
+
+def createAdmin():
+	mystring = input('Please set a password: ')
+	hash_object = hashlib.sha512(mystring.encode())
+	hex_dig = hash_object.hexdigest()
+	passwordFile.write(hex_dig)
+	os.system('clear')
+	print('Your password has been set!')
+	time.sleep(1)
+	os.system('clear')
+	print(header + startPhrase)
 
 def headerGenerator():
-	os.system('clear')
-	print('Type the name of your company below. \n')
-	companyName = input('Company Name> ')
-	isCorrect = input('Is "' + companyName + '" the correct spelling of your company? \ny/N >')
+	if header == '':
+		os.system('clear')
+		print('Type the name of your company below. \n')
+		companyName = input('Company Name> ')
+		isCorrect = input('Is "' + companyName + '" the correct spelling of your company? \ny/N >')
 	
-	if isCorrect.lower() == 'y':
-		companyBanner = pyfiglet.figlet_format(companyName)
-		print(companyBanner)
-	elif isCorrect.lower() == 'n':
-		headerGenerator()
-	else:
-		print('"' + isCorrect + '" is not a valid response. Please type Y or N.')
+		if isCorrect.lower() == 'y':
+			companyBanner = pyfiglet.figlet_format(companyName)
+			companyHeader.write(companyBanner)
+			print(header)
+		elif isCorrect.lower() == 'n':
+			headerGenerator()
+		else:
+			print('"' + isCorrect + '" is not a valid response. Please type Y or N.')
+	# else:
+
 
 def addEmployee():
 	os.system('clear')
