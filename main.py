@@ -2,7 +2,7 @@
 #  ©2020 Chadley Lyell                                                             #
 #  You may not redistribute as yours unless you have written consent from Chadley  #
 #  Twitter: @chad_lyell                                                            #
-#  Email: chad.lyell@protonmail.com                                                 #
+#  Email: chad.lyell@protonmail.com                                                #
 ####################################################################################
 
 import os,time,readline,hashlib,os.path
@@ -26,6 +26,7 @@ exitSentence = color['RED'] + '[Now Exiting!] ' + color['DEFAULT'] +'Folder Lock
 exit = False
 noRun = 'You are not allowed to enter that command here!'
 credits = '©2020 Chadley Lyell\n' + color['TWITTER_BLUE'] + 'Twitter: @chad_lyell' #Yes, I made this during quarantine.
+startPhrase = 'Type "help" to begin!\n'
 os.system('clear') # This will clear the screen for a nice and clean interface!
 
 os.system('chflags hidden db') # Make sure this file is in same directory that you are running this script from.
@@ -54,14 +55,14 @@ def addPassword():
 	print('Your password has been set!')
 	time.sleep(1)
 	os.system('clear')
-	print(header + 'Type "help" to begin!\n')
+	print(header + startPhrase)
 	Main()
 
 def passwordCheck():
 	if secretPassword == '':
 		addPassword()
 	else:
-		print(header + 'Type "help" to begin!\n')
+		print(header + startPhrase)
 		Main()
 
 def setupStatus():

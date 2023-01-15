@@ -1,4 +1,4 @@
-# Pyclock
+# Clock System
 ## Time clock written in Python3.
 
 # Small edits

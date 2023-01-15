@@ -1,18 +1,18 @@
-import readline,os,os.path,pyfiglet,stdiomask,datetime,readline
+import stdiomask,datetime,os,readline
 
-def headerGenerator():
-	os.system('clear')
-	print('Type the name of your company below. \n')
-	companyName = input('Company Name> ')
-	isCorrect = input('Is "' + companyName + '" the correct spelling of your company? \ny/N >')
-	
-	if isCorrect.lower() == 'y':
-		companyBanner = pyfiglet.figlet_format(companyName)
-		print(companyBanner)
-	elif isCorrect.lower() == 'n':
-		headerGenerator()
-	else:
-		print('"' + isCorrect + '" is not a valid response. Please type Y or N.')
+exit = False
+
+def Main():
+
+test = stdiomask.getpass(prompt = 'Password: ')
+
+birthday = input('Employee birthday (YYYY-MM-DD) > ')
+year, month, day = map(int, birthday.split('-'))
+formattedBirthday = datetime.date(year, month, day)
+
+print(year)
+print(datetime.datetime.today())
+
 
 def addEmployee():
 	os.system('clear')
