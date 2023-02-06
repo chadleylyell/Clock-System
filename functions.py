@@ -1,11 +1,22 @@
-import readline,os,os.path,pyfiglet,stdiomask,datetime,platform
+import readline,os,os.path,pyfiglet,stdiomask,datetime,platform,sys,readchar
 
+osName = platform.system()
 companyHeader = open('header','r+')
 header = companyHeader.read()
 
 passwordFile = open('db','r+')
 secretPassword = passwordFile.read()
 
+def clear():
+	if osName == 'Windows':
+		os.system('cls')
+	elif osName == 'Linux':
+		os.system('clear')
+	elif osName == 'Darwin':
+		os.system('clear')
+
+def terminate():
+	sys.exit()
 
 
 def createAdmin():
@@ -24,13 +35,14 @@ def headerGenerator():
 		os.system('clear')
 		print('Type the name of your company below. \n')
 		companyName = input('Company Name> ')
-		isCorrect = input('Is "' + companyName + '" the correct spelling of your company? \ny/N >')
-	
-		if isCorrect.lower() == 'y':
+		print('Is "' + companyName + '" the correct spelling of your company? \ny/n >')
+		isCorrect = readchar.readchar()
+
+		if isCorrect == 'y':
 			companyBanner = pyfiglet.figlet_format(companyName)
 			companyHeader.write(companyBanner)
 			print(header)
-		elif isCorrect.lower() == 'n':
+		elif isCorrect == 'n':
 			headerGenerator()
 		else:
 			print('"' + isCorrect + '" is not a valid response. Please type Y or N.')
